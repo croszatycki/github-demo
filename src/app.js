@@ -12,6 +12,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// application routes
 app.use('/', routesRepository);
 
 app.get('*', (req, res) =>
@@ -23,3 +24,5 @@ app.get('*', (req, res) =>
 const listener = app.listen(port, () => {
   console.log('Your app is listening on port ' + listener.address().port);
 });
+
+module.exports = app;
