@@ -1,8 +1,11 @@
 const express = require('express');
-const { getRepository } = require('../controllers/repository');
+const repositoryController = require('../controllers/repository');
 
 const router = express.Router();
 
-router.get('/repositories/:owner/:repositoryName', getRepository);
+router.get(
+  '/repositories/:owner/:repositoryName',
+  repositoryController.getRepository
+);
 
 module.exports = router;
